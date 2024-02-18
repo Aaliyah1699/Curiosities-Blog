@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import validator from 'validator';
 
+// Change Admin to true in database
+
 const userSchema = new mongoose.Schema(
     {
         username: {

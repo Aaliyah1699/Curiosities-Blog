@@ -46,8 +46,8 @@ const SignUp = () => {
                 {/* left */}
                 <div className='flex-1'>
                     <Link to='/' className='font-bold dark:text-white text-4xl'>
-                        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-                            Aaliyah
+                        <span className='px-2 py-1 bg-gradient-to-r from-pink-500 via-pink-500 to-orange-400 rounded-lg text-white'>
+                            Aaliyah's
                         </span>
                         Blog
                     </Link>
@@ -63,7 +63,7 @@ const SignUp = () => {
                         onSubmit={handleSubmit}
                     >
                         <div>
-                            <Label value='Your username' />
+                            <Label value='Your Username:' />
                             <TextInput
                                 type='text'
                                 placeholder='Username'
@@ -72,7 +72,7 @@ const SignUp = () => {
                             />
                         </div>
                         <div>
-                            <Label value='Your email' />
+                            <Label value='Your Email:' />
                             <TextInput
                                 type='email'
                                 placeholder='name@company.com'
@@ -81,7 +81,7 @@ const SignUp = () => {
                             />
                         </div>
                         <div>
-                            <Label value='Your password' />
+                            <Label value='Your Password:' />
                             <TextInput
                                 type='password'
                                 placeholder='Password'
@@ -90,7 +90,7 @@ const SignUp = () => {
                             />
                         </div>
                         <Button
-                            gradientDuoTone='purpleToPink'
+                            gradientDuoTone='pinkToOrange'
                             type='submit'
                             disabled={loading}
                         >
@@ -107,7 +107,7 @@ const SignUp = () => {
                     </form>
                     <div className='flex gap-2 text-sm mt-5'>
                         <span>Have an account?</span>
-                        <Link to='/sign-in' className='text-blue-500'>
+                        <Link to='/sign-in' className='text-teal-500'>
                             Sign In
                         </Link>
                     </div>
