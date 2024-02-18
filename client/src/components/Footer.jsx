@@ -34,8 +34,7 @@ const FooterComp = () => {
                                 </Footer.Link>
                                 <Footer.Link
                                     href='/about'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
+                                    
                                 >
                                     About
                                 </Footer.Link>
