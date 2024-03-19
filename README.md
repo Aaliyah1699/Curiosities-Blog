@@ -2,13 +2,13 @@
 
 Welcome to **The Curiosities of Aaliyah**, a MERN fullstack blog where you can delve into various topics such as technology, poetry, mental health, and more. This project utilizes a range of technologies including JWT, bcrypt, Firebase Storage, authentication via OAuth and Google sign-in, and Redux for state management.
 
- [Visit The Curiosities of Aaliyah Blog](https://aaliyah-curiosities.onrender.com/)✈️
+ Visit [The Curiosities of Aaliyah Blog](https://aaliyah-curiosities.onrender.com/)✈️
 
 ## Introduction
 
 Explore a world of thoughts, ideas, and stories curated by Aaliyah. Engage with insightful posts, leave comments, like discussions, and utilize advanced search functionalities to discover content tailored to your interests.
 
-### [Explore My Portfolio](https://aaliyahm-portfolio.netlify.app/)💜
+### Explore My [Portfolio💙](https://aaliyahm-portfolio.netlify.app/)
 
 ## Technologies Used
 
