@@ -2,10 +2,16 @@ import bcryptjs from 'bcryptjs';
 import { errorHandler } from '../utils/error.js';
 import User from '../models/UserModel.js';
 
+// Test function: sends a test message to confirm API is working
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const test = (req, res) => {
     res.json({ message: 'API is working!' });
 };
 
+// Update User function: updates a user's profile information
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const updateUser = async (req, res, next) => {
     if (req.user.id !== req.params.userId) {
         return next(
@@ -64,6 +70,9 @@ export const updateUser = async (req, res, next) => {
     }
 };
 
+// Delete User function: deletes a user by ID
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const deleteUser = async (req, res, next) => {
     if (!req.user.isAdmin && req.user.id !== req.params.userId) {
         return next(
@@ -78,6 +87,9 @@ export const deleteUser = async (req, res, next) => {
     }
 };
 
+// Sign Out function: logs the user out by clearing the access token cookie
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const signOut = (req, res, next) => {
     try {
         res.clearCookie('access_token')
@@ -88,6 +100,11 @@ export const signOut = (req, res, next) => {
     }
 };
 
+// Get Users function (requires admin privileges): retrieves all users with pagination, sorting, and counting
+// Time complexity:
+//   - O(log n) - Likely case (relevant indexes)
+//   - O(n) - Worst case (no indexes)
+// Space complexity: O(n)
 export const getUsers = async (req, res, next) => {
     if (!req.user.isAdmin) {
         return next(errorHandler(403, 'You are not allowed to see all users'));
@@ -130,6 +147,9 @@ export const getUsers = async (req, res, next) => {
     }
 };
 
+// Get User function: retrieves a user by ID
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.userId);
