@@ -1,6 +1,9 @@
 import { errorHandler } from '../utils/error.js';
 import Post from '../models/PostModel.js';
 
+// Create Post function: creates a new post in the database
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const create = async (req, res, next) => {
     if (!req.user.isAdmin) {
         return next(errorHandler(403, 'You are not allowed to create a post'));
@@ -26,6 +29,11 @@ export const create = async (req, res, next) => {
     }
 };
 
+// Get Posts function: retrieves posts with filtering, sorting, and counting
+// Time complexity:
+//   - O(log n) - Likely case (relevant indexes)
+//   - O(n) - Worst case (no indexes)
+// Space complexity: O(n)
 export const getPosts = async (req, res, next) => {
     try {
         const startIndex = parseInt(req.query.startIndex) || 0;
@@ -76,6 +84,9 @@ export const getPosts = async (req, res, next) => {
     }
 };
 
+// Delete Post function: deletes a post by ID
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const deletePost = async (req, res, next) => {
     if (!req.user.isAdmin || req.user.id !== req.params.userId) {
         return next(
@@ -90,6 +101,9 @@ export const deletePost = async (req, res, next) => {
     }
 };
 
+// Update Post function: updates an existing post
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const updatePost = async (req, res, next) => {
     if (!req.user.isAdmin || req.user.id !== req.params.userId) {
         return next(
