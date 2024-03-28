@@ -3,6 +3,9 @@ import { errorHandler } from '../utils/error.js';
 import jwt from 'jsonwebtoken';
 import User from '../models/UserModel.js';
 
+// signup function primarily performs data manipulation and validation
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const signUp = async (req, res, next) => {
     const { username, email, password } = req.body;
 
@@ -33,6 +36,12 @@ export const signUp = async (req, res, next) => {
     }
 };
 
+
+// signin function performs data lookup and password validation
+// Time complexity:
+//   - O(1) - Average case (user found and password valid)
+//   - O(n) - Worst case (user not found)
+// Space complexity: O(1)
 export const signIn = async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -69,6 +78,13 @@ export const signIn = async (req, res, next) => {
     }
 };
 
+
+
+// google function checks for existing user and creates a new one if not found
+// Time complexity:
+//   - O(1) - Average case (user found)
+//   - O(n) - Worst case (user not found)
+// Space complexity: O(1)
 export const google = async (req, res, next) => {
     const { email, name, googlePhotoUrl } = req.body;
     try {
