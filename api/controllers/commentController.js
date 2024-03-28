@@ -1,5 +1,8 @@
 import Comment from '../models/CommentModel.js';
 
+// createComment function creates a new comment document
+// Time complexity: O(1) 
+// Space complexity: O(1)
 export const createComment = async (req, res, next) => {
     try {
         const { content, postId, userId } = req.body;
@@ -23,6 +26,10 @@ export const createComment = async (req, res, next) => {
     }
 };
 
+// getPostComments function retrieves comments for a specific post
+// Time complexity:
+//   - O(log n) - Likely case (postId index available)
+// Space complexity: O(1)
 export const getPostComments = async (req, res, next) => {
     try {
         const comments = await Comment.find({
@@ -36,6 +43,9 @@ export const getPostComments = async (req, res, next) => {
     }
 };
 
+// likeComment function allows a user to like/unlike a comment
+// Time complexity: O(n) - Worst case (user needs to be removed from likes array)
+// Space complexity: O(1)
 export const likeComment = async (req, res, next) => {
     try {
         const comment = await Comment.findById(req.params.commentId);
@@ -57,6 +67,9 @@ export const likeComment = async (req, res, next) => {
     }
 };
 
+// editComment function allows authorized users to edit their comments
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const editComment = async (req, res, next) => {
     try {
         const comment = await Comment.findById(req.params.commentId);
@@ -82,6 +95,9 @@ export const editComment = async (req, res, next) => {
     }
 };
 
+// deleteComment function allows authorized users to delete their comments
+// Time complexity: O(1)
+// Space complexity: O(1)
 export const deleteComment = async (req, res, next) => {
     try {
         const comment = await Comment.findById(req.params.commentId);
@@ -100,6 +116,10 @@ export const deleteComment = async (req, res, next) => {
     }
 };
 
+// getComments function retrieves all comments with pagination, sorting, and total/last month comment counts (requires admin privileges)
+// Time complexity:
+//   - O(log n) - Likely case (efficient indexing)
+// Space complexity: O(1)
 export const getComments = async (req, res, next) => {
     if (!req.user.isAdmin)
         return next(
