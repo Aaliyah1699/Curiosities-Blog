@@ -71,10 +71,3 @@ Explore a world of thoughts, ideas, and stories curated by Aaliyah. Engage with 
 - **Update/Delete Personal Profile:**
   - Admins can modify their profile information as needed.
 
-
-
-## Feedback and Contributions
-
-Your feedback is invaluable to us! Feel free to open issues for any bugs or suggestions. Contributions are also welcome through pull requests.
-
-Let's embark on a journey of curiosity together! 🚀
