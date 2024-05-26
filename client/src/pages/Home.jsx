@@ -42,7 +42,7 @@ const Home = () => {
                         <h2 className='text-2xl font-semibold text-center barriecito'>
                             Recent Posts
                         </h2>
-                        <div className='flex flex-wrap gap-4 content-center'>
+                        <div className='flex flex-wrap gap-4 place-content-center'>
                             {posts.map((post) => (
                                 <PostCard key={post._id} post={post} />
                             ))}
