@@ -38,7 +38,6 @@ const Search = () => {
             // If the category is 'uncategorized', fetch all posts
             if (categoryFromUrl === 'uncategorized') {
                 urlParams.delete('category');
-                searchQuery = urlParams.toString();
             }
             const res = await fetch(`/api/post/getposts?${searchQuery}`);
             if (!res.ok) {
