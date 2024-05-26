@@ -139,7 +139,7 @@ const Search = () => {
                             <option value='uncategorized'>Uncategorized</option>
                             <option value='poem'>Poems</option>
                             <option value='tech'>Tech</option>
-                            <option value='random'>Random</option>
+                            <option value='astrology'>Astrology</option>
                         </Select>
                     </div>
                     <Button
