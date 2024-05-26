@@ -24,49 +24,57 @@ const Search = () => {
         const searchTermFromUrl = urlParams.get('searchTerm');
         const sortFromUrl = urlParams.get('sort');
         const categoryFromUrl = urlParams.get('category');
-        if (searchTermFromUrl || sortFromUrl || categoryFromUrl) {
-            setSidebarData({
-                ...sidebarData,
-                searchTerm: searchTermFromUrl,
-                sort: sortFromUrl,
-                category: categoryFromUrl,
-            });
-        }
+        
+        setSidebarData({
+            ...sidebarData,
+            searchTerm: searchTermFromUrl || '',
+            sort: sortFromUrl || 'desc',
+            category: categoryFromUrl || 'all',
+        });
+      
         const fetchPosts = async () => {
             setLoading(true);
             const searchQuery = urlParams.toString();
             const res = await fetch(`/api/post/getposts?${searchQuery}`);
-            if (!res.ok) {
-                setLoading(false);
-                return;
-            }
-            if (res.ok) {
-                const data = await res.json();
-                setPosts(data.posts);
-                setLoading(false);
-                if (data.posts.length === 9) {
-                    setShowMore(true);
-                } else {
-                    setShowMore(false);
-                }
-            }
+            const data = await res.json();
+            setPosts(data.posts);
+            setLoading(false);
+            setShowMore(data.posts.length === 8);
+            // if (!res.ok) {
+            //     setLoading(false);
+            //     return;
+            // }
+            // if (res.ok) {
+            //     const data = await res.json();
+            //     setPosts(data.posts);
+            //     setLoading(false);
+            //     if (data.posts.length === 8) {
+            //         setShowMore(true);
+            //     } else {
+            //         setShowMore(false);
+            //     }
+            // }
         };
         fetchPosts();
     }, [location.search]);
 
-    const handleChange = (e) => {
-        if (e.target.id === 'searchTerm') {
-            setSidebarData({ ...sidebarData, searchTerm: e.target.value });
-        }
-        if (e.target.id === 'sort') {
-            const order = e.target.value || 'desc';
-            setSidebarData({ ...sidebarData, sort: order });
-        }
-        if (e.target.id === 'category') {
-            const category = e.target.value || 'uncategorized';
-            setSidebarData({ ...sidebarData, category });
-        }
+      const handleChange = (e) => {
+        setSidebarData({ ...sidebarData, [e.target.id]: e.target.value });
     };
+
+    // const handleChange = (e) => {
+    //     if (e.target.id === 'searchTerm') {
+    //         setSidebarData({ ...sidebarData, searchTerm: e.target.value });
+    //     }
+    //     if (e.target.id === 'sort') {
+    //         const order = e.target.value || 'desc';
+    //         setSidebarData({ ...sidebarData, sort: order });
+    //     }
+    //     if (e.target.id === 'category') {
+    //         const category = e.target.value || 'uncategorized';
+    //         setSidebarData({ ...sidebarData, category });
+    //     }
+    // };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -74,29 +82,31 @@ const Search = () => {
         urlParams.set('searchTerm', sidebarData.searchTerm);
         urlParams.set('sort', sidebarData.sort);
         urlParams.set('category', sidebarData.category);
-        const searchQuery = urlParams.toString();
+        // const searchQuery = urlParams.toString();
         navigate(`/search?${searchQuery}`);
     };
 
     const handleShowMore = async () => {
-        const numberOfPosts = posts.length;
-        const startIndex = numberOfPosts;
+        const startIndex = posts.length;
         const urlParams = new URLSearchParams(location.search);
         urlParams.set('startIndex', startIndex);
         const searchQuery = urlParams.toString();
         const res = await fetch(`/api/post/getposts?${searchQuery}`);
-        if (!res.ok) {
-            return;
-        }
-        if (res.ok) {
-            const data = await res.json();
-            setPosts([...posts, ...data.posts]);
-            if (data.posts.length === 9) {
-                setShowMore(true);
-            } else {
-                setShowMore(false);
-            }
-        }
+        const data = await res.json();
+        setPosts([...posts, ...data.posts]);
+        setShowMore(data.posts.length === 8);
+        // if (!res.ok) {
+        //     return;
+        // }
+        // if (res.ok) {
+        //     const data = await res.json();
+        //     setPosts([...posts, ...data.posts]);
+        //     if (data.posts.length === 8) {
+        //         setShowMore(true);
+        //     } else {
+        //         setShowMore(false);
+        //     }
+        // }
     };
 
     return (
