@@ -21,39 +21,35 @@ const Search = () => {
 
     useEffect(() => {
         const urlParams = new URLSearchParams(location.search);
-        const searchTermFromUrl = urlParams.get('searchTerm');
-        const sortFromUrl = urlParams.get('sort');
-        const categoryFromUrl = urlParams.get('category');
+        const searchTermFromUrl = urlParams.get('searchTerm') || '';
+        const sortFromUrl = urlParams.get('sort') || 'desc';
+        const categoryFromUrl = urlParams.get('category') || 'all';
         
         setSidebarData({
             ...sidebarData,
-            searchTerm: searchTermFromUrl || '',
-            sort: sortFromUrl || 'desc',
-            category: categoryFromUrl || 'all',
+            searchTerm: searchTermFromUrl,
+            sort: sortFromUrl,
+            category: categoryFromUrl,
         });
       
         const fetchPosts = async () => {
             setLoading(true);
             const searchQuery = urlParams.toString();
             const res = await fetch(`/api/post/getposts?${searchQuery}`);
-            const data = await res.json();
-            setPosts(data.posts);
-            setLoading(false);
-            setShowMore(data.posts.length === 8);
-            // if (!res.ok) {
-            //     setLoading(false);
-            //     return;
-            // }
-            // if (res.ok) {
-            //     const data = await res.json();
-            //     setPosts(data.posts);
-            //     setLoading(false);
-            //     if (data.posts.length === 8) {
-            //         setShowMore(true);
-            //     } else {
-            //         setShowMore(false);
-            //     }
-            // }
+            if (!res.ok) {
+                setLoading(false);
+                return;
+            }
+            if (res.ok) {
+                const data = await res.json();
+                setPosts(data.posts);
+                setLoading(false);
+                if (data.posts.length === 8) {
+                    setShowMore(true);
+                } else {
+                    setShowMore(false);
+                }
+            }
         };
         fetchPosts();
     }, [location.search]);
@@ -82,7 +78,7 @@ const Search = () => {
         urlParams.set('searchTerm', sidebarData.searchTerm);
         urlParams.set('sort', sidebarData.sort);
         urlParams.set('category', sidebarData.category);
-        // const searchQuery = urlParams.toString();
+        const searchQuery = urlParams.toString();
         navigate(`/search?${searchQuery}`);
     };
 
@@ -92,21 +88,18 @@ const Search = () => {
         urlParams.set('startIndex', startIndex);
         const searchQuery = urlParams.toString();
         const res = await fetch(`/api/post/getposts?${searchQuery}`);
-        const data = await res.json();
-        setPosts([...posts, ...data.posts]);
-        setShowMore(data.posts.length === 8);
-        // if (!res.ok) {
-        //     return;
-        // }
-        // if (res.ok) {
-        //     const data = await res.json();
-        //     setPosts([...posts, ...data.posts]);
-        //     if (data.posts.length === 8) {
-        //         setShowMore(true);
-        //     } else {
-        //         setShowMore(false);
-        //     }
-        // }
+        if (!res.ok) {
+            return;
+        }
+        if (res.ok) {
+            const data = await res.json();
+            setPosts([...posts, ...data.posts]);
+            if (data.posts.length === 8) {
+                setShowMore(true);
+            } else {
+                setShowMore(false);
+            }
+        }
     };
 
     return (
