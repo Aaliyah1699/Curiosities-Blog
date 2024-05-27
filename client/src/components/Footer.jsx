@@ -41,7 +41,7 @@ const FooterComp = () => {
                             </Footer.LinkGroup>
                         </div>
                         <div>
-                            <Footer.Title title='Follow us' />
+                            <Footer.Title title='Follow Me' />
                             <Footer.LinkGroup col>
                                 <Footer.Link
                                     href='https://github.com/Aaliyah1699'
