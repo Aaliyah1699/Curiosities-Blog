@@ -17,7 +17,7 @@ const About = () => {
 
                         <p>
                             On this blog, you will find articles on topics that
-                            can span from animals, history, technology, and
+                            can span from astrology, technology, mental health, and
                             more. I am always learning and exploring new topics
                             and technologies, so be sure to check back often for
                             new content!
