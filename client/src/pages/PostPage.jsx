@@ -66,7 +66,7 @@ const PostPage = () => {
                 to={`/search?category=${post && post.category}`}
                 className='self-center mt-5'
             >
-                <Button color='gray' pill size='xs'>
+                <Button color='gray' pill size='xs' classname='capitalize'>
                     {post && post.category}
                 </Button>
             </Link>
