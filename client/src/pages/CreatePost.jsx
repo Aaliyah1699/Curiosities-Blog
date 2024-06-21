@@ -111,9 +111,11 @@ const CreatePost = () => {
                         }
                     >
                         <option value='uncategorized'>Select a category</option>
-                        <option value='poem'>Poems</option>
+                        <option value='poem'>Poetry</option>
                         <option value='tech'>Tech</option>
                         <option value='astrology'>Astrology</option>
+                        <option value='health'>Health</option>
+                        <option value='life'>Life</option>
                     </Select>
                 </div>
                 <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
