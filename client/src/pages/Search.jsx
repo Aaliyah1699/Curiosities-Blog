@@ -141,9 +141,11 @@ const Search = () => {
                             id='category'
                         >
                             <option value='uncategorized'>Uncategorized</option>
-                            <option value='poem'>Poems</option>
+                            <option value='poem'>Poetry</option>
                             <option value='tech'>Tech</option>
                             <option value='astrology'>Astrology</option>
+                            <option value='health'>Health</option>
+                            <option value='life'>Life</option>
                         </Select>
                     </div>
                     <Button
