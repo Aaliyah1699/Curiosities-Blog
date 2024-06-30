@@ -6,7 +6,7 @@ const Projects = () => {
             <h1 className='text-3xl font-semibold'>My Projects</h1>
             <p className='text-md text-gray-500'>
                 My portfolio highlights my favorite creations and shows the
-                breadth of my skills - take a look!
+                depth of my skills - take a look!
             </p>
             <CallToAction />
         </div>
