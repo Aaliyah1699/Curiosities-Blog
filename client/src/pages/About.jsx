@@ -35,7 +35,7 @@ const About = () => {
                             will find interesting please leave a comment so we
                             can check it out💞.
                         </p>
-                        <p className='text-sm'>Pictures are from Pinterest<p/>
+                        <p className='text-sm'>Pictures are from Pinterest</p>
                     </div>
                 </div>
             </div>
