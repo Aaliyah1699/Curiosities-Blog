@@ -19,7 +19,7 @@ const Home = () => {
         <div>
             <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto '>
                 <h1 className='text-3xl font-bold lg:text-6xl barriecito '>
-                    Welcome to Curiosities of Aaliyah!
+                    Welcome to The Curiosities of Aaliyah!
                 </h1>
                 <p className='text-gray-500 text-xs sm:text-sm'>
                     This blog is a cabinet stuffed to the brim with my musings,
