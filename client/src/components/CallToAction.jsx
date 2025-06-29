@@ -23,7 +23,7 @@ const CallToAction = () => {
                     </a>
                 </Button>
                  <Button
-                    gradientDuoTone='orangeToPink'
+                    gradientDuoTone='pinkToOrange'
                     className='rounded-tl-xl rounded-bl-none'
                 >
                     <a
