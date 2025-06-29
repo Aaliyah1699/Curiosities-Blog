@@ -8,7 +8,7 @@ const CallToAction = () => {
                     For a deeper look at what I can do
                 </h2>
                 <p className='text-gray-500 my-2 capitalize'>
-                    I invite you to explore my portfolio
+                    I invite you to explore my portfolios
                 </p>
                 <Button
                     gradientDuoTone='pinkToOrange'
@@ -19,7 +19,19 @@ const CallToAction = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        Click Here To See More💖
+                        Software Development Portfolio
+                    </a>
+                </Button>
+                 <Button
+                    gradientDuoTone='orangeToPink'
+                    className='rounded-tl-xl rounded-bl-none'
+                >
+                    <a
+                        href='https://aaliyah-da-portfolio.netlify.app/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        Data Analysis Portfolio
                     </a>
                 </Button>
             </div>
