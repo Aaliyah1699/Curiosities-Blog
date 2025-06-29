@@ -12,7 +12,7 @@ const CallToAction = () => {
                 </p>
                 <Button
                     gradientDuoTone='pinkToOrange'
-                    className='rounded-tl-xl rounded-bl-none'
+                    className='rounded-tl-xl rounded-bl-none mb-2'
                 >
                     <a
                         href='https://aaliyahm-portfolio.netlify.app/'
@@ -24,7 +24,7 @@ const CallToAction = () => {
                 </Button>
                  <Button
                     gradientDuoTone='pinkToOrange'
-                    className='rounded-tl-xl rounded-bl-none'
+                    className='rounded-tl-xl rounded-bl-none mt-2'
                 >
                     <a
                         href='https://aaliyah-da-portfolio.netlify.app/'
