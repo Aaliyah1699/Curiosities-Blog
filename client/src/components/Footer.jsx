@@ -71,7 +71,9 @@ const FooterComp = () => {
                 <Footer.Divider />
                 <div className='w-full sm:flex sm:items-center sm:justify-between'>
                     <Footer.Copyright
-                        href='#'
+                        href='https://aaliyahs-portfolio.netlify.app/'
+                        target='_blank'
+                        rel='noopener noreferrer'
                         by='Aaliyah M.'
                         year={new Date().getFullYear()}
                     />
