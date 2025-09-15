@@ -26,7 +26,7 @@ const FooterComp = () => {
                             <Footer.Title title='About' />
                             <Footer.LinkGroup col>
                                 <Footer.Link
-                                    href='https://aaliyahm-portfolio.netlify.app/'
+                                    href='https://aaliyahs-portfolio.netlify.app/'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
