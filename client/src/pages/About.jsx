@@ -11,14 +11,14 @@ const About = () => {
                             Welcome to Curiosities of Aaliyah! This blog was
                             created by Aaliyah Montgomery as a personal project
                             to share my thoughts and ideas with the world. I am
-                            passionate Data Analyst and Software Developer who loves to learn. The
-                            topics I love to know about are always changing.
+                            passionate Data Analyst and Software Developer who loves to learn. 
+                            The topics and issues I'm interested in are always changing.
                         </p>
 
                         <p>
                             On this blog, you will find articles on topics that
-                            can span from astrology to technology, to mental health, and
-                            more. I am always learning and exploring new topics
+                            can span from astrology to technology, mental health, and
+                            beyond. I am always learning and exploring new topics
                             and technologies, so be sure to check back often for
                             new content!
                         </p>
@@ -27,13 +27,13 @@ const About = () => {
                             I encourage you to leave comments on my posts and
                             engage with other readers. You can like other
                             people's comments and reply to them as well. I
-                            believe that a community of learners can help each
-                            other grow and improve.
+                            believe that a peaceful community of learners can help 
+                            each other grow and improve.
                         </p>
                         <p>
-                            If you have any topics that you think any reader
-                            will find interesting, please leave a comment so we
-                            can check it out💞.
+                            If you have any topics that you think I
+                            will find interesting, please leave a comment so I
+                            can check it out 💞.
                         </p>
                         <p className='text-sm'>Pictures are from Pinterest.</p>
                     </div>
