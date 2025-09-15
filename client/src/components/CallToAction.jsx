@@ -24,7 +24,8 @@ const CallToAction = () => {
                 </Button>
             </div>
             <div className='p-7 flex-1'>
-                <img src='https://i.pinimg.com/736x/1f/46/8c/1f468c1437ccd23228a00e26cf1377c7.jpg' />
+                <img src='https://i.pinimg.com/736x/ee/bb/13/eebb1352a45cea755c31f5f915e043a0.jpg' />
+{/*                 <img src='https://i.pinimg.com/736x/1f/46/8c/1f468c1437ccd23228a00e26cf1377c7.jpg' /> */}
 {/*                 <img src='https://binarapps.com/wp-content/uploads/2021/09/Top-10-Programming-Languages-of-the-Future.png' /> */}
             </div>
         </div>
